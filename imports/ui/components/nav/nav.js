@@ -6,7 +6,10 @@ Template.nav.onCreated(function navOnCreated() {
 });
 
 Template.nav.helpers({
-
+  useremail(){
+    const user = Meteor.user();
+    return user && user.emails && user.emails[0].address;
+  }
 });
 
 Template.nav.events({

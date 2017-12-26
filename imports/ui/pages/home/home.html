@@ -1,4 +1,13 @@
 <template name="App_home">
+  <div class="container">
+  <div class="jumbotron">
+    <h1>MeteorJS Start</h1>
+    <p>MeteorJS is the most popular full stack web development framework to build web, mobile and desktop apps.</p>
+  </div>
+  <p>This is some text.</p>
+  <p>This is another text.</p>
+</div>
+  <div class="container">
   {{#if currentUser}}
   {{#if isInRole 'admin'}}
     <p class="lead">You are an admin.</p>
@@ -12,5 +21,6 @@
     First user will be assigned 'admin' role, rest as 'user'.
   </p>
   {{/if}}
+  </div>
 
 </template>
