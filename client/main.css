@@ -1,3 +1,7 @@
+body{
+  padding-bottom: 60px ;
+}
+
 .btn, .label{
   border: 0px;
   border-radius: 0px;
