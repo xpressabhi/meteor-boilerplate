@@ -6,7 +6,7 @@
 
 meteor-base@1.2.0             # Packages every Meteor app needs to have
 mobile-experience@1.0.5       # Packages for a great mobile UX
-mongo@1.3.0                   # The database Meteor supports right now
+mongo@1.3.1                   # The database Meteor supports right now
 blaze-html-templates    # Compile .html files into Meteor Blaze views
 reactive-var@1.0.11            # Reactive variable for tracker
 tracker@1.1.3                 # Meteor's client-side reactive programming library
@@ -25,21 +25,21 @@ less@2.7.11                    # Leaner CSS language
 practicalmeteor:mocha             # A package for writing and running your meteor app and package tests with mocha
 johanbrook:publication-collector  # Test a Meteor publication by collecting its output
 
-check
+check@1.2.5
 momentjs:moment
 aldeed:collection2-core@2.0.0
 aldeed:autoform
-accounts-password
-accounts-base
+accounts-password@1.5.0
+accounts-base@1.4.0
 fourseven:scss
 fortawesome:fontawesome
 twbs:bootstrap
-session
+session@1.1.7
 alanning:roles
 tmeasday:publish-counts
 ongoworks:security
 useraccounts:bootstrap
-dynamic-import
+dynamic-import@0.2.0
 useraccounts:flow-routing
 meteorhacks:aggregate
 natestrauser:connection-banner
