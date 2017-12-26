@@ -1,0 +1,17 @@
+<template name="userprofile">
+  {{#with currentUser}}
+    <p class="lead">ID: {{_id}}</p>
+    {{#each emails}}
+      <p class="lead">Email: {{address}} #  {{#if verified}}
+        Verified
+      {{else}}
+        Not Verified
+      {{/if}} </p>
+    {{/each}}
+    <p class="lead">Roles:
+    {{#each roles}}
+    <span class="label label-info">{{firstCapital this}}</span>
+    {{/each}}
+    </p>
+  {{/with}}
+</template>
