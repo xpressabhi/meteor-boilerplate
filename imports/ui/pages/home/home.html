@@ -1,26 +1,27 @@
 <template name="App_home">
   <div class="container">
-  <div class="jumbotron">
-    <h1>MeteorJS Start</h1>
-    <p>MeteorJS is the most popular full stack web development framework to build web, mobile and desktop apps.</p>
-  </div>
-  <p>This is some text.</p>
-  <p>This is another text.</p>
-</div>
-  <div class="container">
-  {{#if currentUser}}
-  {{#if isInRole 'admin'}}
-    <p class="lead">You are an admin.</p>
-  {{/if}}
-  {{> hello}}
-  {{> info}}
-  {{else}}
-  <p class="lead">Login first.</p>
-  <br>
-  <p class="lead">
-    First user will be assigned 'admin' role, rest as 'user'.
-  </p>
-  {{/if}}
+    {{#if currentUser}}
+      {{#if isInRole 'admin'}}
+        <p class="lead">You are an admin.</p>
+      {{/if}}
+      {{> hello}}
+      {{> info}}
+    {{else}}
+    <div class="jumbotron">
+      <h1>MeteorJS Start</h1>
+      <p>MeteorJS is the most popular full stack web development framework to build web, mobile and desktop apps.</p>
+      {{#unless currentUser}}
+        <div class="btn-group btn-group-lg">
+          <a href="/signin" class="btn btn-primary">
+            Log In
+          </a>
+          <a href="/join" class="btn btn-info">
+            Sign Up
+          </a>
+        </div>
+      {{/unless}}
+    </div>
+    {{/if}}
   </div>
 
 </template>
