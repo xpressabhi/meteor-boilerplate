@@ -1,0 +1,15 @@
+<template name="Dashboard">
+  <div class="container">
+    <div class="page-header">
+      <h1>Dashboard
+        <small></small>
+      </h1>
+    </div>
+
+    {{#if isInRole 'admin'}}
+    <p class="lead">Data will appear here.</p>
+    {{else}}
+      <p class="lead">You are not authorized.</p>
+    {{/if}}
+  </div>
+</template>

@@ -1,0 +1,15 @@
+<template name="Users">
+  <div class="container">
+    <div class="page-header">
+      <h1>Users management
+        <small></small>
+      </h1>
+    </div>
+
+    {{#if isInRole 'admin'}}
+      {{> users}}
+    {{else}}
+      <h2>Users management available only for admin. Be admin</h2>
+    {{/if}}
+  </div>
+</template>

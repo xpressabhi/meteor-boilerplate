@@ -1,5 +1,5 @@
 import './userprofile.html';
-import './../../helpers/helper.js';
+import './../../helpers/helpers.js';
 
 import R from 'ramda';
 

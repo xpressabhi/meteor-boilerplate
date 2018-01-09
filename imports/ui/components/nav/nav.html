@@ -13,9 +13,20 @@
         <ul class="nav navbar-nav">
           <li class="active"><a href="/">Home</a></li>
           {{#if currentUser}}
-          <li><a href="#">Link1</a></li>
-          <li><a href="#">Link2</a></li>
-          <li><a href="#">Link3</a></li>
+          <li><a href="support">Support</a></li>
+          {{/if}}
+          <li><a href="/faqs">FAQs</a></li>
+          {{#if isInRole 'admin'}}
+            <li>
+              <a href="/users">
+                <i class="fa fa-users" aria-hidden="true"></i>
+                Users</a>
+            </li>
+            <li>
+              <a href="/dashboard">
+                <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>
+                Dashboard</a>
+            </li>
           {{/if}}
         </ul>
         <ul class="nav navbar-nav navbar-right">
