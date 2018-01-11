@@ -27,8 +27,12 @@ Meteor.publish('users.all', function () {
 
 Meteor.publish('users.search', function (query) {
   check(query,String);
+  let regex = new RegExp(query, 'i');
   if(!query || query===''){
     return Meteor.users.find({},options);
+  }
+  if(query)
+    return Meteor.users.find({"emails.address": regex},options);
   return this.ready();
 });
 
