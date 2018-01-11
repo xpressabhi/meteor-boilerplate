@@ -11,7 +11,7 @@
       </div>
       <div class="collapse navbar-collapse" id="myNavbar">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="/">Home</a></li>
+          <li><a href="/">Home</a></li>
           {{#if currentUser}}
           <li><a href="support">Support</a></li>
           {{/if}}
@@ -19,20 +19,18 @@
           {{#if isInRole 'admin'}}
             <li>
               <a href="/users">
-                <i class="fa fa-users" aria-hidden="true"></i>
                 Users</a>
             </li>
             <li>
               <a href="/dashboard">
-                <span class="glyphicon glyphicon-dashboard" aria-hidden="true"></span>
                 Dashboard</a>
             </li>
           {{/if}}
         </ul>
         <ul class="nav navbar-nav navbar-right">
           {{#if currentUser}}
-          <li> <a href="/profile"><span class="glyphicon glyphicon-user"></span> {{useremail}}</a> </li>
-          <li><a href="#" class="logout"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
+          <li> <a href="/profile"><img src="{{gravatorUrl}}" class="img-circle gravator-img" alt="{{useremail}}" width="40" height="40"></a> </li>
+          <li><a href="#" class="logout"><span class="glyphicon glyphicon-log-in"></span></a></li>
           {{else}}
           <li><a href="{{pathFor 'join'}}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
           <li><a href="{{pathFor 'signin'}}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
