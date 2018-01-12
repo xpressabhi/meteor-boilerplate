@@ -13,13 +13,17 @@ Basic app with blazejs has good to start framework.
 # Install Dependencies
 ```meteor npm install```
 
-# Run meteor
+# Run meteor in local
 ```meteor ```
 (use ```meteor --production``` to minify everything and simulate production speeds
 
+# Deploy app to cloud
+Get domain name from godaddy.
+Create a Digital Ocean account to host app
+[https://m.do.co/c/2981263168e6](https://m.do.co/c/2981263168e6) (Get $10 credit on signup)
+Follow instruction at [meteor-up.com](http://meteor-up.com/)
 
 # Additions to this App
-
 1. User accounts
 2. Bootstrap theme for accounts login as well.
 3. Default login,join navigation for users.
