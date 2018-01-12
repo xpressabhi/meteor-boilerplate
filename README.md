@@ -18,10 +18,11 @@ Basic app with blazejs has good to start framework.
 (use ```meteor --production``` to minify everything and simulate production speeds
 
 # Deploy app to cloud
-Get domain name from godaddy.
-Create a Digital Ocean account to host app
+
+1. Get domain name from godaddy.
+2. Create a Digital Ocean account to host app
 [https://m.do.co/c/2981263168e6](https://m.do.co/c/2981263168e6) (Get $10 credit on signup)
-Follow instruction at [meteor-up.com](http://meteor-up.com/)
+3. Follow instruction at [meteor-up.com](http://meteor-up.com/)
 
 # Additions to this App
 1. User accounts
@@ -30,7 +31,7 @@ Follow instruction at [meteor-up.com](http://meteor-up.com/)
 4. First user as 'admin' rest 'user'.
 5. Support page where users can log reuests and admin can reply.
 6. FAQs page, updated by admin, visible to all.
-7. User namagement page. Admin can see and delete users.
+7. User management page. Admin can see and delete users.
 8. A dashboard page to display stats.
 9. Gravator integration to display profile image.
 10. A profile page.
