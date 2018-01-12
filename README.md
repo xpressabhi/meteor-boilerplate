@@ -4,16 +4,16 @@ meteor create --full meteorjs-start
 
 Basic app with blazejs has good to start framework.
 
-#Install Meteor
+# Install Meteor
 ```curl https://install.meteor.com/ | sh```
 
-#Clone repository
+# Clone repository
 ```git clone https://github.com/xpressabhi/metorjs-start.git```
 
-#Install Dependencies
+# Install Dependencies
 ```meteor npm install```
 
-#Run meteor
+# Run meteor
 ```meteor ```
 (use ```meteor --production``` to minify everything and simulate production speeds
 
