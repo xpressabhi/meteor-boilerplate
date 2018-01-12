@@ -1,8 +1,8 @@
 # This app created as full template
 
-meteor create --full meteorjsStart
+meteor create --full meteorjs-start
 
-Basic app has is really basic and good to start adding all the packages and components.
+Basic app with blazejs has good to start framework.
 
 # Additions to this App
 
@@ -10,3 +10,7 @@ Basic app has is really basic and good to start adding all the packages and comp
 2. Bootstrap theme for accounts login as well.
 3. Default login,join navigation for users.
 4. First user as 'admin' rest 'user'.
+5. Support page where users can log reuests and admin can reply.
+6. FAQs page, updated by admin, visible to all.
+7. User namagement page. Admin can see and delete users.
+8. A dashboard page to display stats.
