@@ -8,7 +8,7 @@ Basic app with blazejs has good to start framework.
 ```curl https://install.meteor.com/ | sh```
 
 # Clone repository
-```git clone https://github.com/xpressabhi/metorjs-start.git```
+```git clone https://github.com/xpressabhi/meteor-js-start.git```
 
 # Install Dependencies
 ```meteor npm install```
