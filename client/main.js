@@ -2,6 +2,7 @@
 
 import '/imports/startup/client';
 import '/imports/startup/both';
+import '/node_modules/bootstrap/dist/js/bootstrap.min.js';
 
 AccountsTemplates.configure({
   //defaultTemplate: 'Auth_page',

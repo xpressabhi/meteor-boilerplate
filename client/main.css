@@ -1,36 +1,3 @@
-body{
-  padding-bottom: 60px ;
-}
-
-.btn, .label{
-  border: 0px;
-  border-radius: 0px;
-  -webkit-appearance: none;
-  -webkit-box-shadow: 5px 6px 8px -4px rgba(150, 150, 150, 0.73);
-  -moz-box-shadow: 5px 6px 8px -4px rgba(150, 150, 150, 0.73);
-  box-shadow: 5px 6px 8px -4px rgba(150, 150, 150, 0.73);
-}
-
-.textInput {
-  border: 0px;
-  border-radius: 0px;
-  background-color: white;
-  -webkit-appearance: none;
-  -webkit-box-shadow: 0px 6px 6px -5px rgba(200, 200, 200, 0.73);
-  -moz-box-shadow: 0px 6px 6px -5px rgba(200, 200, 200, 0.73);
-  box-shadow: 0px 6px 6px -5px rgba(200, 200, 200, 0.73);
-}
-
-.textInput:focus {
-  border: 0px;
-  border-radius: 0px;
-  background-color: white;
-  -webkit-appearance: none;
-  -webkit-box-shadow: 0px 6px 8px -4px rgba(150, 150, 150, 0.73);
-  -moz-box-shadow: 0px 6px 8px -4px rgba(150, 150, 150, 0.73);
-  box-shadow: 0px 6px 8px -4px rgba(150, 150, 150, 0.73);
-}
-
 .gravator-img{
   margin-top:-15px;
   margin-bottom:-15px;
