@@ -1,39 +1,52 @@
 <template name="faqs">
   {{#if isInRole 'admin'}}
-  {{#if allowAddingFaq}}
-  <form class="add-faq">
-    <div class="form-group">
-      <input type="text" class="form-control input-lg textInput lead" name="question" placeholder="FAQ question..." maxlength="300" minlength="5" required="required">
-    </div>
-    <div class="form-group">
-      <textarea type="text" class="form-control input-lg textInput lead" name="answer" rows="5" placeholder="Answer..." maxlength="3000" minlength="10" required="required"></textarea>
-    </div>
-    <button class="btn btn-primary btn-lg" type="submit">
-      Add
-    </button>
-    <button class="btn btn-default btn-lg cancelAddingFaq" type="button">
-      Cancel
-    </button>
-  </form>
-  {{else}}
-    <button type="button" class="btn btn-info allowAddingFaq">
-      Add New FAQ
-    </button>
-  {{/if}}
+    {{#if allowAddingFaq}}
+      <form class="add-faq">
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">Q.</span>
+          </div>
+          <input type="text" class="form-control" name="question" placeholder="FAQ question..." maxlength="300" minlength="5" required="required" aria-label="Question" aria-describedby="basic-addon1">
+        </div>
+        <div class="input-group mb-3">
+          <div class="input-group-prepend">
+            <span class="input-group-text">A.</span>
+          </div>
+          <textarea class="form-control" name="answer" rows="1" placeholder="Answer..." maxlength="3000" minlength="10" required="required" aria-label="Answer"></textarea>
+          <div class="input-group-append">
+            <button class="btn btn-primary" type="submit">
+              Add
+            </button>
+            <button class="btn btn-secondary cancelAddingFaq" type="button">
+              Cancel
+            </button>
+          </div>
+
+        </div>
+
+      </form>
+    {{else}}
+      <button type="button" class="btn btn-info allowAddingFaq">
+        Add New FAQ
+      </button>
+    {{/if}}
 
     <hr>
   {{/if}}
   {{#each faqs}}
-  <div class="well well-sm">
-    <p class="lead">Q: {{question}}</p>
-    <p>A: {{answer}}</p>
-    {{#if isInRole 'admin'}}
-    <button type="button" class="btn btn-danger removeFaq"> <i class="fa fa-times" aria-hidden="true"></i>
-      Remove
-    </button>
-    {{/if}}
-  </div>
-    {{else}}
+    <div class="well well-sm">
+      <p class="lead">Q:
+        {{question}}</p>
+      <p>A:
+        {{answer}}</p>
+      {{#if isInRole 'admin'}}
+        <button type="button" class="btn btn-danger removeFaq">
+          <i class="fa fa-times" aria-hidden="true"></i>
+          Remove
+        </button>
+      {{/if}}
+    </div>
+  {{else}}
     <p class="lead">No FAQs</p>
   {{/each}}
 </template>
