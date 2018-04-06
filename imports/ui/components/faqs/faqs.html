@@ -34,17 +34,16 @@
     <hr>
   {{/if}}
   {{#each faqs}}
-    <div class="well well-sm">
-      <p class="lead">Q:
-        {{question}}</p>
-      <p>A:
-        {{answer}}</p>
-      {{#if isInRole 'admin'}}
-        <button type="button" class="btn btn-danger removeFaq">
-          <i class="fa fa-times" aria-hidden="true"></i>
-          Remove
-        </button>
-      {{/if}}
+    <div class="card border-0">
+      <div class="card-body">
+        {{#if isInRole 'admin'}}
+          <i class="fa fa-times removeFaq text-danger float-right" aria-hidden="true"></i>
+        {{/if}}
+        <div class="card-title">Q:
+          {{question}}</div>
+        <p class="small">A:
+          {{answer}}</p>
+      </div>
     </div>
   {{else}}
     <p class="lead">No FAQs</p>
