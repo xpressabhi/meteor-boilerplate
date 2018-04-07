@@ -23,14 +23,14 @@ FlowRouter.route('/users', {
   triggersEnter: [AccountsTemplates.ensureSignedIn],
   name: 'Users',
   action() {
-    BlazeLayout.render('App_body', {nav:'nav', main: 'Users'});
+    BlazeLayout.render('App_body', {nav:'nav', main: 'usersPage'});
   },
 });
 FlowRouter.route('/dashboard', {
   triggersEnter: [AccountsTemplates.ensureSignedIn],
   name: 'Dashboard',
   action() {
-    BlazeLayout.render('App_body', {nav:'nav', main: 'Dashboard'});
+    BlazeLayout.render('App_body', {nav:'nav', main: 'dashboard'});
   },
 });
 

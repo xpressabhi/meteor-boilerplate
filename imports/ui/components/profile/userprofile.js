@@ -15,7 +15,7 @@ Template.userprofile.helpers({
 });
 
 Template.userprofile.events({
-  "event": function(e, t){
+  "event": function(event, templateInstance){
 
   }
 });

@@ -14,10 +14,12 @@ const options = {
   limit: 50
 };
 Meteor.publish("user.byids", function(ids){
+  check(ids, [String]);
   return Meteor.users.find({_id:{$in:ids}},options);
 });
 
 Meteor.publish("user.one", function(id){
+  check(id, String);
   return Meteor.users.find({_id:id},options);
 });
 

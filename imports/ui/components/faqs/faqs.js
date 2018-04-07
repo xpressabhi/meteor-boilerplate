@@ -15,13 +15,13 @@ Template.faqs.helpers({
 });
 
 Template.faqs.events({
-  "click .allowAddingFaq"(e,t){
+  "click .allowAddingFaq"(event, templateInstance){
     t.allowAddingFaq.set(true);
   },
-  "click .cancelAddingFaq"(e,t){
+  "click .cancelAddingFaq"(event, templateInstance){
     t.allowAddingFaq.set(false);
   },
-  "submit .add-faq"(e, t){
+  "submit .add-faq"(event, templateInstance){
     e.preventDefault();
     const target = e.target;
     const q = target.question.value.trim();
@@ -36,9 +36,9 @@ Template.faqs.events({
         target.answer.value='';
         t.allowAddingFaq.set(false);
       }
-    })
+    });
   },
-  'click .removeFaq'(ev,t){
+  'click .removeFaq'(event, templateInstance){
     Meteor.call('faqs.remove',this._id,(e,r)=>{
       if (e) {
         console.log(e);

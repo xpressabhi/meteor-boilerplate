@@ -50,7 +50,7 @@ Template.support.helpers({
   }
 });
 Template.support.events({
-  "submit .support" (e, t) {
+  "submit .support" (event, templateInstance) {
     e.preventDefault();
     const comment = e.target.comments.value.trim();
     const userId = FlowRouter.getParam('id') || Meteor.userId();
@@ -62,6 +62,6 @@ Template.support.events({
         console.log(res);
         e.target.comments.value = '';
       }
-    })
+    });
   }
 });

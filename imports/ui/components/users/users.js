@@ -41,16 +41,16 @@ Template.users.helpers({
 });
 
 Template.users.events({
-  'click .deleteUser' (e, t) {
+  'click .deleteUser' (event, templateInstance) {
     Meteor.call('users.remove', this._id, (e, r) => {
       if (e)
         console.log(e);
       if (r)
         console.log(r);
       }
-    )
+    );
   },
-  'keyup input[name="users"]' (ev, t) {
+  'keyup input[name="users"]' (event, templateInstance) {
     const txt = ev.target.value.trim();
     t.searchQuery.set(txt);
     t.searching.set(true);

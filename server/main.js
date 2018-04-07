@@ -11,7 +11,7 @@ const postSignUp = function postSignUp(userId, info) {
     if(count ===1){
       Roles.addUsersToRoles(userId, ['admin']);
     }
-}
+};
 
 
 AccountsTemplates.configure({

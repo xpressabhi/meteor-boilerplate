@@ -1,16 +1,16 @@
 import './dashboard.html';
 
-Template.Dashboard.onCreated(function(){
+Template.dashboard.onCreated(function(){
 
 });
-Template.Dashboard.helpers({
+Template.dashboard.helpers({
   helper: function(){
 
   }
 });
 
-Template.Dashboard.events({
-  "event": function(e, t){
+Template.dashboard.events({
+  "event": function(event, templateInstance){
 
   }
 });

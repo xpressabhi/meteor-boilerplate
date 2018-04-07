@@ -1,16 +1,16 @@
 import './Users.html';
 import '../../components/users/users.js';
 
-Template.Users.onCreated(function usersOnCreated() {
+Template.usersPage.onCreated(function usersOnCreated() {
   // counter starts at 0
 
 });
 
-Template.Users.helpers({
+Template.usersPage.helpers({
 
 });
 
-Template.Users.events({
+Template.usersPage.events({
   'click .logout': () => {
     AccountsTemplates.logout();
   }
