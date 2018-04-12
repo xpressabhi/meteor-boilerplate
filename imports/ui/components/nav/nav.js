@@ -5,6 +5,12 @@ Template.nav.onCreated(function navOnCreated() {
 
 });
 
+Template.nav.onRendered(function () {
+  const path = FlowRouter.current().path.split('/')[1];
+  $('.active').removeClass('active');
+  $(`a[href$="/${path}"]`).addClass('active');
+});
+
 Template.nav.helpers({
   useremail(){
     const user = Meteor.user();
@@ -18,17 +24,7 @@ Template.nav.helpers({
       var options = {
         secure: true
       };
-
-      //  var md5Hash = Gravatar.hash(email);
-      // 5658ffccee7f0ebfda2b226238b1eb6e
-
       url = Gravatar.imageUrl(email, options);
-      // https://secure.gravatar.com/avatar/5658ffccee7f0ebfda2b226238b1eb6e
-    //  console.log(url);
-
-      //  var url2 = Gravatar.imageUrl(md5Hash, options);
-      // https://secure.gravatar.com/avatar/5658ffccee7f0ebfda2b226238b1eb6e
-      //  console.log(url2);
     }
     return url;
 
@@ -39,6 +35,10 @@ Template.nav.events({
   'click .logout': () => {
     AccountsTemplates.logout();
     FlowRouter.go('/');
+  },
+  'click .nav-link' (event, templateInstance) {
+    $('.active').removeClass('active');
+    $(event.currentTarget).addClass('active');
   }
 
 });
