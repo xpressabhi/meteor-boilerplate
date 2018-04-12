@@ -6,7 +6,7 @@
     {{#each users}}
       <div class="card my-1">
         <div class="card-header" data-toggle="collapse" data-target="#collapse-{{_id}}">
-          <i class="fa fa-chevron-down" aria-hidden="true"></i>
+          <i class="fas fa-chevron-down" aria-hidden="true"></i>
           {{useremail}}
           {{#if isAdmin}}
             : Admin
@@ -15,7 +15,7 @@
         <div id="collapse-{{_id}}" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">
             <button type="button" class="btn btn-secondary deleteUser">
-              <i class="fa fa-trash" aria-hidden="true"></i>
+              <i class="fas fa-trash" aria-hidden="true"></i>
               User
             </button>
           </div>

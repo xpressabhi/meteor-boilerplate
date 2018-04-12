@@ -8,6 +8,9 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.0.0-beta.44",
+    "@fortawesome/fontawesome": "^1.1.5",
+    "@fortawesome/fontawesome-free-brands": "^5.0.10",
+    "@fortawesome/fontawesome-free-solid": "^5.0.10",
     "bcrypt": "^1.0.3",
     "bootstrap": "^4.0.0",
     "jquery": "^3.3.1",
