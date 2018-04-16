@@ -1,6 +1,6 @@
 # This app created as full template
 
-meteor create --full meteorjs-start
+meteor create --full meteor-boilerplate
 
 Basic app with blazejs has good to start framework.
 
@@ -8,7 +8,7 @@ Basic app with blazejs has good to start framework.
 ```curl https://install.meteor.com/ | sh```
 
 # Clone repository
-```git clone https://github.com/xpressabhi/meteor-js-start.git```
+```git clone https://github.com/xpressabhi/meteor-boilerplate.git```
 
 # Install Dependencies
 ```meteor npm install```
@@ -35,3 +35,5 @@ Basic app with blazejs has good to start framework.
 8. A dashboard page to display stats.
 9. Gravator integration to display profile image.
 10. A profile page.
+11. Bootstrap 4.1
+12. Fontawesome 5
