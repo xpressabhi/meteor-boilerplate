@@ -1,12 +1,12 @@
 <template name="users">
-  <div class="form-group">
+  <div class="form-group shadow-lg">
     <input type="text" class="form-control textInput" name="users" placeholder="start typing to search users by email..">
   </div>
   <hr>
     {{#each users}}
-      <div class="card my-1">
+      <div class="card my-1 shadow-lg">
         <div class="card-header" data-toggle="collapse" data-target="#collapse-{{_id}}">
-          <i class="fas fa-chevron-down" aria-hidden="true"></i>
+          <i class="fas fa-chevron-down float-right" aria-hidden="true"></i> <i class="fas fa-user"></i>
           {{useremail}}
           {{#if isAdmin}}
             : Admin

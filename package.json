@@ -7,12 +7,12 @@
     "pretest": "npm run lint --silent"
   },
   "dependencies": {
-    "@babel/runtime": "^7.0.0-beta.44",
+    "@babel/runtime": "^7.0.0-beta.46",
     "@fortawesome/fontawesome": "^1.1.5",
     "@fortawesome/fontawesome-free-brands": "^5.0.10",
     "@fortawesome/fontawesome-free-solid": "^5.0.10",
     "bcrypt": "^1.0.3",
-    "bootstrap": "^4.0.0",
+    "bootstrap": "^4.1.0",
     "jquery": "^3.3.1",
     "meteor-node-stubs": "^0.3.3",
     "popper.js": "^1.14.3",
@@ -21,13 +21,13 @@
   },
   "devDependencies": {
     "@meteorjs/eslint-config-meteor": "^1.0.5",
-    "babel-eslint": "^8.2.2",
+    "babel-eslint": "^8.2.3",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-import-resolver-meteor": "^0.4.0",
-    "eslint-plugin-import": "^2.10.0",
+    "eslint-plugin-import": "^2.11.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-meteor": "^4.2.0",
+    "eslint-plugin-meteor": "^4.2.1",
     "eslint-plugin-react": "^7.7.0"
   },
   "eslintConfig": {

@@ -1,5 +1,5 @@
 <template name="nav">
-  <nav class="navbar navbar-expand-sm navbar-light bg-light">
+  <nav class="navbar navbar-expand-sm navbar-light bg-light shadow-lg mb-3">
     <div class="container">
       <a class="navbar-brand" href="/">MeteorJS Start</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -8,24 +8,24 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
           <li class="nav-item active">
-            <a class="nav-link" href="/">Home
+            <a class="nav-link" href="/"><i class="fas fa-home"></i> Home
               <span class="sr-only">(current)</span></a>
           </li>
           {{#if currentUser}}
             <li class="nav-item">
-              <a class="nav-link" href="support">Support</a>
+              <a class="nav-link" href="support"><i class="fas fa-hands-helping"></i>Support</a>
             </li>
           {{/if}}
           <li class="nav-item">
-            <a class="nav-link active" href="/faqs">FAQs</a>
+            <a class="nav-link active" href="/faqs"><i class="fas fa-question-circle"></i>FAQs</a>
           </li>
           {{#if isInRole 'admin'}}
             <li class="nav-item">
-              <a class="nav-link" href="/users">
+              <a class="nav-link" href="/users"><i class="fas fa-users"></i>
                 Users</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="/dashboard">
+              <a class="nav-link" href="/dashboard"><i class="fas fa-tachometer-alt"></i>
                 Dashboard</a>
             </li>
           {{/if}}
