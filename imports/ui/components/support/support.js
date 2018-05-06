@@ -1,11 +1,19 @@
 import './support.html';
 import {Chats} from '/imports/api/chats/chats.js';
 Template.support.onCreated(function() {
-  const self = this;
-  self.autorun(() => {
+  this.autorun(() => {
     const userId = FlowRouter.getParam('id') || Meteor.userId();
-    self.subscribe('chats.all', userId);
-    self.subscribe('user.one',userId);
+    this.subscribe('chats.all', userId);
+    this.subscribe('user.one',userId);
+    if (Roles.userIsInRole(userId, 'admin')) {
+      let userIds = [];
+      Chats.find().map((ch) => {
+        if (ch.customerId && !userIds.includes(ch.customerId))
+          userIds.push(ch.customerId);
+        }
+      );
+      this.subscribe('user.byids', userIds);
+    }
   });
 
 });
@@ -51,16 +59,17 @@ Template.support.helpers({
 });
 Template.support.events({
   "submit .support" (event, templateInstance) {
-    e.preventDefault();
-    const comment = e.target.comments.value.trim();
+    event.preventDefault();
+    const comment = event.target.comments.value.trim();
     const userId = FlowRouter.getParam('id') || Meteor.userId();
+    console.log('logs ', comment, userId);
     Meteor.call('chats.insert', userId, comment, (err, res) => {
       if (err) {
         console.log(err);
       }
       if (res) {
         console.log(res);
-        e.target.comments.value = '';
+        event.target.comments.value = '';
       }
     });
   }

@@ -2,42 +2,54 @@
   {{#if showChatForm}}
     <div class="chatform">
       {{#if isInRole 'admin'}}
-        <p class="lead">Reply to {{customerEmail}}</p>
+        <p class="lead">Reply to
+          {{customerEmail}}</p>
       {{/if}}
       <form class="support">
         <div class="input-group">
           <textarea type="text" class="form-control input-lg textInput lead" name="comments" rows="5" placeholder="{{chatPlaceholder}}" maxlength="3000" minlength="1" required="required"></textarea>
-          <div class="input-group-btn">
-            <button class="btn btn-primary btn-lg" type="submit">
-              <i class="glyphicon glyphicon-ok"></i>
-            </button>
-          </div>
         </div>
-      </form> <hr>
+        <div class="input-group-btn my-2">
+          <button class="btn btn-primary btn-block" type="submit">
+            <i class="fas fa-check"></i>
+            Send
+          </button>
+        </div>
+      </form>
+      <hr>
     </div>
   {{/if}}
   {{#each chatsReverse}}
-    {{#if isAdmin}}
-      <span class="label label-info">Admin : {{betterDateTime createdAt}}</span>
-    {{else}}
-    {{#if isInRole 'admin'}}
-      <span class="label label-success">Customer : {{betterDateTime createdAt}}</span>
-    {{else}}
-      <span class="label label-success">You : {{betterDateTime createdAt}}</span>
-    {{/if}}
+    <div class="card my-3 shadow-lg">
+      <div class="card-header">
+        <span class="badge badge-secondary float-right">{{betterDateTime createdAt}}</span>
+        {{#if isAdmin}}
+          <span class="badge badge-info">Admin
+          </span>
+        {{else}}
+          {{#if isInRole 'admin'}}
+            <span class="badge badge-success">{{userEmail customerId}}
+            </span>
+          {{else}}
+            <span class="badge badge-success">You</span>
+          {{/if}}
+        {{/if}}
+        {{#unless showChatForm}}
+          {{#unless isAdmin}}
+            <a href="/support/{{customerId}}" class="btn btn-default btn-sm">
+              <i class="fas fa-reply"></i>
+            </a>
+          {{/unless}}
+        {{/unless}}
+      </div>
+      <div class="card-body">
+        {{@index}}#
+        {{comments}}
+        <br>
 
-    {{/if}}
-    <div class="well lead">{{@index}}#
-      {{comments}}
-      <br>
-      {{#unless showChatForm}}
-        <a href="/support/{{customerId}}" class="btn btn-default btn-sm">
-          Reply
-        </a>
-      {{/unless}}
+      </div>
     </div>
-    <p class="lead"></p>
-    {{else}}
+  {{else}}
     <p class="lead">No support request yet.</p>
   {{/each}}
 </template>

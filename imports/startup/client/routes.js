@@ -16,21 +16,21 @@ import '../../ui/pages/dashboard/dashboard.js';
 FlowRouter.route('/', {
   name: 'App.home',
   action() {
-    BlazeLayout.render('App_body', {nav:'nav', main: 'App_home'});
+    BlazeLayout.render('App_body', {nav:'nav', main: 'App_home', footer:'footer'});
   },
 });
 FlowRouter.route('/users', {
   triggersEnter: [AccountsTemplates.ensureSignedIn],
   name: 'Users',
   action() {
-    BlazeLayout.render('App_body', {nav:'nav', main: 'usersPage'});
+    BlazeLayout.render('App_body', {nav:'nav', main: 'usersPage', footer:'footer'});
   },
 });
 FlowRouter.route('/dashboard', {
   triggersEnter: [AccountsTemplates.ensureSignedIn],
   name: 'Dashboard',
   action() {
-    BlazeLayout.render('App_body', {nav:'nav', main: 'dashboard'});
+    BlazeLayout.render('App_body', {nav:'nav', main: 'dashboard', footer:'footer'});
   },
 });
 
@@ -38,33 +38,33 @@ FlowRouter.route('/profile', {
   triggersEnter: [AccountsTemplates.ensureSignedIn],
   name: 'Profile',
   action() {
-    BlazeLayout.render('App_body', {nav:'nav', main: 'Profile'});
+    BlazeLayout.render('App_body', {nav:'nav', main: 'Profile', footer:'footer'});
   },
 });
 FlowRouter.route('/support', {
   triggersEnter: [AccountsTemplates.ensureSignedIn],
   name: 'Support',
   action() {
-    BlazeLayout.render('App_body', {nav:'nav', main: 'Support'});
+    BlazeLayout.render('App_body', {nav:'nav', main: 'Support', footer:'footer'});
   },
 });
 FlowRouter.route('/support/:id', {
   triggersEnter: [AccountsTemplates.ensureSignedIn],
   name: 'Support',
   action() {
-    BlazeLayout.render('App_body', {nav:'nav', main: 'Support'});
+    BlazeLayout.render('App_body', {nav:'nav', main: 'Support', footer:'footer'});
   },
 });
 FlowRouter.route('/faqs', {
   name: 'FAQs',
   action() {
-    BlazeLayout.render('App_body', {nav:'nav', main: 'Faqs'});
+    BlazeLayout.render('App_body', {nav:'nav', main: 'Faqs', footer:'footer'});
   },
 });
 
 
 FlowRouter.notFound = {
   action() {
-    BlazeLayout.render('App_body', { main: 'App_notFound' });
+    BlazeLayout.render('App_body', { main: 'App_notFound' , footer:'footer'});
   },
 };
