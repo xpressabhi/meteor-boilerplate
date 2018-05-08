@@ -8,6 +8,27 @@ import '/imports/startup/client';
 import '/imports/startup/both';
 import '/node_modules/bootstrap/dist/js/bootstrap.min.js';
 
+$().ready(() => {
+  $('.col-md-offset-3').addClass('offset-md-3');
+  $('.btn-default').addClass('btn-secondary');
+});
+
+
+AccountsTemplates.addField({
+  _id: 'type',
+  type: 'hidden',
+  displayName: 'User type',
+  minLength: 4,
+  maxLength: 8,
+  re: /^[a-z0-9]+$/,
+  trim: true,
+  lowercase: true,
+  placeholder: {
+    signUp: "User type "
+  }
+});
+
+
 AccountsTemplates.configure({
   //defaultTemplate: 'Auth_page',
   defaultLayout: 'App_body',

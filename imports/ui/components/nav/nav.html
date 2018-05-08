@@ -11,14 +11,6 @@
             <a class="nav-link" href="/"><i class="fas fa-home"></i> Home
               <span class="sr-only">(current)</span></a>
           </li>
-          {{#if currentUser}}
-            <li class="nav-item">
-              <a class="nav-link" href="support"><i class="fas fa-hands-helping"></i>Support</a>
-            </li>
-          {{/if}}
-          <li class="nav-item">
-            <a class="nav-link active" href="/faqs"><i class="fas fa-question-circle"></i>FAQs</a>
-          </li>
           {{#if isInRole 'admin'}}
             <li class="nav-item">
               <a class="nav-link" href="/users"><i class="fas fa-users"></i>

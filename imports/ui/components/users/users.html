@@ -14,10 +14,13 @@
         </div>
         <div id="collapse-{{_id}}" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">
-            <button type="button" class="btn btn-secondary deleteUser">
+            <button type="button" class="btn btn-danger deleteUser">
               <i class="fas fa-trash" aria-hidden="true"></i>
               User
             </button>
+            <button type="button" class="btn {{#if userIsInRole _id 'truck'}} btn-primary {{else}} btn-secondary{{/if}} toggleAnother">Another</button>
+            <button type="button" class="btn {{#if userIsInRole _id 'user'}} btn-primary {{else}} btn-secondary{{/if}} toggleUser">User</button>
+            <a class="btn btn-primary" href="/support/{{_id}}" role="button">Support</a>
           </div>
         </div>
       </div>

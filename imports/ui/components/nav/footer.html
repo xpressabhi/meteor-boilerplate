@@ -1,13 +1,23 @@
 <template name="footer">
-  <nav class="navbar navbar-light bg-light">
+  <nav class="navbar navbar-light bg-light mt-5 mb-0 pb-0">
     <div class="container">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        {{#if currentUser}}
+          <li class="nav-item">
+            <a class="nav-link" href="support"><i class="fas fa-hands-helping"></i>Support</a>
+          </li>
+        {{/if}}
+        <li class="nav-item">
+          <a class="nav-link active" href="/faqs"><i class="fas fa-question-circle"></i>FAQs</a>
+        </li>
+
+      </ul>
       <span class="navbar-text">
         <a class="nav-link" href="https://xpressabhi.github.io/" target="_blank">Developed by Abhishek Maurya</a>
       </span>
-      <span class="navbar-text">
-        Copyright @Abhishek Maurya
-      </span>
     </div>
   </nav>
-
 </template>
