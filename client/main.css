@@ -2,3 +2,10 @@
   margin-top:-15px;
   margin-bottom:-15px;
 }
+.homepage{
+  height:100vh;
+  background-image:url('https://source.unsplash.com/random');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
