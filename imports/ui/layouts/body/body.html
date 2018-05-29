@@ -1,20 +1,9 @@
 <template name="App_body">
-<div class="homepage">
-  {{> Template.dynamic template=nav}}
-  <div class="container mt-5 pt-5">
-    {{#if currentUser}}
-    {{> Template.dynamic template=main}}
-
-    {{else}}
-    <div class="row">
-      <div class="col-sm-3"></div>
-      <div class="col-sm-6">{{> atForm}}</div>
-      <div class="col-sm-3"></div>
+  <div class="homepage">
+    {{> Template.dynamic template=nav}}
+    <div class="container mt-5 pt-2">
+      {{> Template.dynamic template=main}}
     </div>
-    {{/if}}
+    {{> Template.dynamic template=footer}}
   </div>
-  {{> Template.dynamic template=footer}}
-
-</div>
-
 </template>

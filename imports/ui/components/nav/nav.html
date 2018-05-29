@@ -1,5 +1,5 @@
 <template name="nav">
-  <nav class="navbar navbar-expand-sm fixed-top navbar-light bg-light shadow-lg">
+  <nav class="navbar navbar-expand navbar-dark shadow-lg">
     <div class="container">
       <a class="navbar-brand" href="/">MeteorJS Start</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -25,7 +25,7 @@
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
           {{#if currentUser}}
             <li class="nav-item">
-              <a class="nav-link" href="/profile"><img src="{{gravatorUrl}}" class="rounded-circle gravator-img" alt="{{useremail}}" width="40" height="40"></a>
+              <a class="nav-link" href="/profile">Account</a>
             </li>
             <li class="nav-item">
               <a class="nav-link logout" href="#">

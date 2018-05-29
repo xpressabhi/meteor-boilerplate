@@ -1,13 +1,8 @@
 <template name="dashboard">
   <div class="container bg-white p-5">
-    <div class="page-header">
-      <h1>Dashboard
-        <small></small>
-      </h1>
-    </div>
-
+    <h3 class="border-bottom">Dashboard</h3>
     {{#if isInRole 'admin'}}
-    <p class="lead">Data will appear here.</p>
+      <p class="lead">Data will appear here.</p>
     {{else}}
       <p class="lead">You are not authorized.</p>
     {{/if}}

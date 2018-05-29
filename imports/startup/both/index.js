@@ -1,30 +1,23 @@
 // Import modules used by both client and server through a single index entry point
 // e.g. useraccounts configuration file.
 
-AccountsTemplates.addField({
-  _id: 'type',
-  type: 'hidden'
-});
-
-AccountsTemplates.configure({
-  //defaultTemplate: 'Auth_page',
-  defaultLayout: 'App_body',
-  defaultContentRegion: 'main',
-  defaultLayoutRegions: {nav: 'nav'}
-});
-
 AccountsTemplates.configureRoute('signIn', {
+  layoutType: 'blaze',
   name: 'signin',
-  path: '/signin',
+  path: '/login',
+  template: 'authForm',
+  layoutTemplate: 'App_body',
+  layoutRegions: {nav: 'nav',footer:'footer'},
+  contentRegion: 'main',
   redirect: '/'
 });
 AccountsTemplates.configureRoute('signUp', {
-  name: 'join',
+  layoutType: 'blaze',
+  name: 'signup',
   path: '/join',
+  template: 'authForm',
+  layoutTemplate: 'App_body',
+  layoutRegions: {nav: 'nav',footer:'footer'},
+  contentRegion: 'main',
   redirect: '/'
-});
-// AccountsTemplates.configureRoute('forgotPwd');
-AccountsTemplates.configureRoute('resetPwd', {
-  name: 'resetPwd',
-  path: '/reset-password'
 });

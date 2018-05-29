@@ -15,19 +15,6 @@ Template.nav.helpers({
   useremail(){
     const user = Meteor.user();
     return user && user.emails && user.emails[0].address;
-  },
-  gravatorUrl: function() {
-    const user = Meteor.user();
-    const email = user && user.emails && user.emails[0].address;
-    let url;
-    if (email) {
-      var options = {
-        secure: true
-      };
-      url = Gravatar.imageUrl(email, options);
-    }
-    return url;
-
   }
 });
 

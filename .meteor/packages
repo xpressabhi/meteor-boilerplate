@@ -42,5 +42,4 @@ useraccounts:flow-routing
 meteorhacks:aggregate
 natestrauser:connection-banner
 arillo:flow-router-helpers
-jparker:gravatar
 seba:minifiers-autoprefixer
