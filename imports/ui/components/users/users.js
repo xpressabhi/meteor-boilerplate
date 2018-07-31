@@ -55,11 +55,9 @@ Template.users.events({
     t.searchQuery.set(txt);
     t.searching.set(true);
   },
-  'click .toggleAnother'(event, templateInstance){
-    Meteor.call('user.toggleRole', this._id, 'another');
-  },
-  'click .toggleUser'(event, templateInstance){
-    Meteor.call('user.toggleRole', this._id, 'user');
+  'click .toggleRole'(event, templateInstance){
+    const role = event.target.innerText.toLowerCase();
+    Meteor.call('user.toggleRole', this._id, role);
   }
 
 });
