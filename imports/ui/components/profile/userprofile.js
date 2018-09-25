@@ -1,8 +1,6 @@
 import './userprofile.html';
 import './../../helpers/helpers.js';
 
-import R from 'ramda';
-
 Template.userprofile.onCreated(function(){
 
 });

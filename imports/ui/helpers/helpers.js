@@ -1,8 +1,5 @@
-import R from 'ramda';
-
 Template.registerHelper( 'firstCapital', (str) => {
-  const fn= p=> R.toUpper(R.head(p))+R.tail(p);
-  return fn(str);
+  return str.charAt(0).toUpperCase() + str.substr(1);
 });
 
 Template.registerHelper('userIsInRole', function(user, role) {

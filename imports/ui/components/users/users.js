@@ -1,7 +1,6 @@
 import {Meteor} from 'meteor/meteor';
 import './users.html';
 import './../../helpers/helpers.js';
-import R from 'ramda';
 
 Template.users.onCreated(function() {
   // counter starts at 0
