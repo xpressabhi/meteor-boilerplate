@@ -1,11 +1,7 @@
-.gravator-img{
-  margin-top:-15px;
-  margin-bottom:-15px;
-}
 .homepage{
   min-height:100vh;
-  background-image:url('https://source.unsplash.com/random');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-attachment: fixed;
+  /* background-image:url('https://source.unsplash.com/random'); */
+  /* background-repeat: no-repeat; */
+  /* background-size: cover; */
+  /* background-attachment: fixed; */
 }

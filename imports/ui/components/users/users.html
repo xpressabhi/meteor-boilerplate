@@ -1,10 +1,10 @@
 <template name="users">
-  <div class="form-group shadow-lg">
+  <div class="form-group shadow">
     <input type="text" class="form-control textInput" name="users" placeholder="start typing to search users by email..">
   </div>
   <hr>
     {{#each users}}
-      <div class="card my-1 shadow-lg">
+      <div class="card my-1 shadow">
         <div class="card-header" data-toggle="collapse" data-target="#collapse-{{_id}}">
           <i class="fas fa-chevron-down float-right" aria-hidden="true"></i> <i class="fas fa-user"></i>
           {{useremail}}
@@ -12,7 +12,7 @@
             : Admin
           {{/if}}
         </div>
-        <div id="collapse-{{_id}}" class="collapse hide" aria-labelledby="headingOne" data-parent="#accordion">
+        <div id="collapse-{{_id}}" class="collapse">
           <div class="card-body">
             <button type="button" class="btn btn-danger deleteUser">
               <i class="fas fa-trash" aria-hidden="true"></i>
