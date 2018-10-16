@@ -11,6 +11,10 @@ import '../../ui/pages/faqs/Faqs.js';
 import '../../ui/pages/users/Users.js';
 import '../../ui/pages/dashboard/dashboard.js';
 
+const scrollTop = () => {
+  window.scrollTo(0, 0);
+};
+
 
 // Set up all routes in the app
 FlowRouter.route('/', {
@@ -20,14 +24,30 @@ FlowRouter.route('/', {
   },
 });
 FlowRouter.route('/users', {
-  triggersEnter: [AccountsTemplates.ensureSignedIn],
+  triggersEnter: [
+    AccountsTemplates.ensureSignedIn,
+    scrollTop,
+    (context, redirect) => {
+      if (!Roles.userIsInRole(Meteor.userId(), ['admin'])) {
+        redirect('/');
+      }
+    }
+  ],
   name: 'Users',
   action() {
     BlazeLayout.render('App_body', {nav:'nav', main: 'usersPage', footer:'footer'});
   },
 });
 FlowRouter.route('/dashboard', {
-  triggersEnter: [AccountsTemplates.ensureSignedIn],
+  triggersEnter: [
+    AccountsTemplates.ensureSignedIn,
+    scrollTop,
+    (context, redirect) => {
+      if (!Roles.userIsInRole(Meteor.userId(), ['admin'])) {
+        redirect('/');
+      }
+    }
+  ],
   name: 'Dashboard',
   action() {
     BlazeLayout.render('App_body', {nav:'nav', main: 'dashboard', footer:'footer'});
