@@ -33,7 +33,6 @@ Basic app with blazejs has good to start framework.
 6. FAQs page, updated by admin, visible to all.
 7. User management page. Admin can see and delete users.
 8. A dashboard page to display stats.
-9. Gravator integration to display profile image.
-10. A profile page.
-11. Bootstrap 4.1
-12. Fontawesome 5
+9. A profile page.
+10. Bootstrap 4.1
+11. Fontawesome 5
