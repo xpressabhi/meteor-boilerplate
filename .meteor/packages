@@ -40,4 +40,4 @@ useraccounts:flow-routing
 meteorhacks:aggregate
 arillo:flow-router-helpers
 seba:minifiers-autoprefixer
-jquery
+jquery@3.0.0!
