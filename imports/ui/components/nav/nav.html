@@ -1,17 +1,12 @@
 <template name="nav">
   <nav class="navbar navbar-expand navbar-dark bg-dark shadow-lg">
     <div class="container">
-      <a class="navbar-brand" href="/">MeteorJS Start</a>
+      <a class="navbar-brand" href="/">MeteorJS 1.10.1</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse text-center" id="navbarNav">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">
-              <i class="fas fa-home"></i>
-            </a>
-          </li>
           {{#if isInRole 'admin'}}
             <li class="nav-item">
               <a class="nav-link" href="/users">
@@ -50,7 +45,7 @@
               </a>
             </li>
             <li class="nav-item">
-              <a href="/join" class="nav-link">
+              <a href="/sign-up" class="nav-link">
                 <i class="fas fa-user-plus"></i>
                 Register
               </a>
