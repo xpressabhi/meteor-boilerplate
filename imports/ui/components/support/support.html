@@ -22,7 +22,7 @@
   {{#each chatsReverse}}
     <div class="card my-3 shadow-lg">
       <div class="card-header">
-        <span class="badge badge-secondary float-right">{{betterDateTime createdAt}}</span>
+        <span class="badge badge-secondary float-right">{{calendar createdAt}}</span>
         {{#if isAdmin}}
           <span class="badge badge-info">Admin
           </span>
