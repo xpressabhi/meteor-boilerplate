@@ -11,3 +11,6 @@ import '../../api/chats/server/publications.js';
 
 import '../../api/users/methods.js';
 import '../../api/users/server/publications.js';
+
+import '../../api/roles/methods.js';
+import '../../api/roles/server/publications.js';
