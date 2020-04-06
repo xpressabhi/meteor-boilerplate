@@ -25,18 +25,30 @@ less@2.8.0                    # Leaner CSS language
 practicalmeteor:mocha             # A package for writing and running your meteor app and package tests with mocha
 johanbrook:publication-collector  # Test a Meteor publication by collecting its output
 
-check@1.3.1
-aldeed:collection2-core@2.0.0
+accounts-google@1.3.3
 accounts-password@1.6.0
-accounts-base@1.6.0
-fourseven:scss
-session@1.2.0
 alanning:roles
+aldeed:collection2@3.0.2
+aldeed:schema-deny
+aldeed:schema-index
+aldeed:template-extension
+check@1.3.1
+email@1.2.3
+force-ssl@1.1.0
+fourseven:scss
+http@1.4.2
+jquery@3.0.0!
+littledata:synced-cron
+matb33:collection-hooks
+meteorhacks:ssr
+natestrauser:connection-banner
+reactive-dict@1.3.0
+seba:minifiers-autoprefixer
+server-render@0.3.1
+service-configuration@1.0.11
+session@1.2.0
+tmeasday:presence
 tmeasday:publish-counts
 useraccounts:bootstrap
-dynamic-import@0.5.1
+useraccounts:core
 useraccounts:flow-routing
-meteorhacks:aggregate
-arillo:flow-router-helpers
-seba:minifiers-autoprefixer
-jquery@3.0.0!

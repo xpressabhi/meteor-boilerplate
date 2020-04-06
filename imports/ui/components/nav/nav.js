@@ -5,25 +5,20 @@ Template.nav.onCreated(function navOnCreated() {
 
 });
 
-Template.nav.onRendered(function () {
+Template.nav.onRendered(function() {
   const path = FlowRouter.current().path.split('/')[1];
   $('.active').removeClass('active');
   $(`a[href$="/${path}"]`).addClass('active');
+  $('.page-loading').remove();
 });
 
-Template.nav.helpers({
-  useremail(){
-    const user = Meteor.user();
-    return user && user.emails && user.emails[0].address;
-  }
-});
 
 Template.nav.events({
   'click .logout': () => {
     AccountsTemplates.logout();
     FlowRouter.go('/');
   },
-  'click .nav-link' (event, templateInstance) {
+  'click .nav-link'(event, templateInstance) {
     $('.active').removeClass('active');
     $(event.currentTarget).addClass('active');
   }
