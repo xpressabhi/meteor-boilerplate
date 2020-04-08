@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@babel/runtime": "^7.9.2",
+    "bcrypt": "^4.0.1",
     "bootstrap": "^4.4.1",
     "jquery": "^3.4.1",
     "meteor-accounts-t9n": "^2.5.2",
