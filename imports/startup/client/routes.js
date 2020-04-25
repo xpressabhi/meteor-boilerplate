@@ -133,6 +133,7 @@ FlowRouter.notFound = {
   async action() {
     await import('../../ui/pages/not-found/not-found.js');
     BlazeLayout.render('App_body', {
+      nav: 'nav',
       main: 'App_notFound',
       footer: 'footer'
     });
