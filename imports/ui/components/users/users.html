@@ -3,26 +3,28 @@
     <input type="text" class="form-control textInput" name="users" placeholder="start typing to search users by email..">
   </div>
   <hr>
-    {{#each users}}
-      <div class="card my-1 shadow">
-        <div class="card-header" data-toggle="collapse" data-target="#collapse-{{_id}}">
-          <i class="fas fa-chevron-down float-right" aria-hidden="true"></i> <i class="fas fa-user"></i>
-          {{useremail}}
-          {{#if isAdmin}}
-            : Admin
-          {{/if}}
-        </div>
-        <div id="collapse-{{_id}}" class="collapse">
-          <div class="card-body">
-            <button type="button" class="btn btn-danger deleteUser">
-              <i class="fas fa-trash" aria-hidden="true"></i>
-              User
-            </button>
-            <button type="button" class="btn {{#if userIsInRole _id 'another'}} btn-primary {{else}} btn-secondary{{/if}} toggleRole">Another</button>
-            <button type="button" class="btn {{#if userIsInRole _id 'user'}} btn-primary {{else}} btn-secondary{{/if}} toggleRole">User</button>
-            <a class="btn btn-primary" href="/support/{{_id}}" role="button">Support</a>
-          </div>
+  {{#each users}}
+    <div class="card my-1 shadow">
+      <div class="card-header" data-toggle="collapse" data-target="#collapse-{{_id}}">
+        <i class="fas fa-chevron-down float-right" aria-hidden="true"></i> <i class="fas fa-user"></i>
+        {{#each emails}}
+          {{address}}
+        {{/each}}
+        {{#if userIsInRole _id 'admin'}}
+          : Admin
+        {{/if}}
+      </div>
+      <div id="collapse-{{_id}}" class="collapse">
+        <div class="card-body">
+          <button type="button" class="btn btn-danger deleteUser">
+            <i class="fas fa-trash" aria-hidden="true"></i>
+            User
+          </button>
+          <button type="button" class="btn {{#if userIsInRole _id 'another'}} btn-primary {{else}} btn-secondary{{/if}} toggleRole">Another</button>
+          <button type="button" class="btn {{#if userIsInRole _id 'user'}} btn-primary {{else}} btn-secondary{{/if}} toggleRole">User</button>
+          <a class="btn btn-primary" href="/support/{{_id}}" role="button">Support</a>
         </div>
       </div>
-    {{/each}}
+    </div>
+  {{/each}}
 </template>
