@@ -8,12 +8,6 @@ import {
 // Import needed templates
 import '../../ui/layouts/body/body.js';
 import '../../ui/pages/home/home.js';
-import '../../ui/pages/profile/profile.js';
-import '../../ui/pages/not-found/not-found.js';
-import '../../ui/pages/support/support.js';
-import '../../ui/pages/faqs/Faqs.js';
-import '../../ui/pages/users/Users.js';
-import '../../ui/pages/dashboard/dashboard.js';
 
 const scrollTop = () => {
   window.scrollTo(0, 0);
@@ -56,7 +50,8 @@ FlowRouter.route('/users', {
     }
   ],
   name: 'Users',
-  action() {
+  async action() {
+    await import('../../ui/pages/users/Users.js');
     BlazeLayout.render('App_body', {
       nav: 'nav',
       main: 'usersPage',
@@ -75,7 +70,8 @@ FlowRouter.route('/dashboard', {
     }
   ],
   name: 'Dashboard',
-  action() {
+  async action() {
+    await import('../../ui/pages/dashboard/dashboard.js');
     BlazeLayout.render('App_body', {
       nav: 'nav',
       main: 'dashboard',
@@ -87,7 +83,8 @@ FlowRouter.route('/dashboard', {
 FlowRouter.route('/profile', {
   triggersEnter: [AccountsTemplates.ensureSignedIn],
   name: 'Profile',
-  action() {
+  async action() {
+    await import('../../ui/pages/profile/profile.js');
     BlazeLayout.render('App_body', {
       nav: 'nav',
       main: 'Profile',
@@ -98,7 +95,8 @@ FlowRouter.route('/profile', {
 FlowRouter.route('/support', {
   triggersEnter: [AccountsTemplates.ensureSignedIn],
   name: 'Support',
-  action() {
+  async action() {
+    await import('../../ui/pages/support/support.js');
     BlazeLayout.render('App_body', {
       nav: 'nav',
       main: 'Support',
@@ -109,7 +107,8 @@ FlowRouter.route('/support', {
 FlowRouter.route('/support/:id', {
   triggersEnter: [AccountsTemplates.ensureSignedIn],
   name: 'Support',
-  action() {
+  async action() {
+    await import('../../ui/pages/support/support.js');
     BlazeLayout.render('App_body', {
       nav: 'nav',
       main: 'Support',
@@ -119,7 +118,8 @@ FlowRouter.route('/support/:id', {
 });
 FlowRouter.route('/faqs', {
   name: 'FAQs',
-  action() {
+  async action() {
+    await import('../../ui/pages/faqs/Faqs.js');
     BlazeLayout.render('App_body', {
       nav: 'nav',
       main: 'Faqs',
@@ -130,7 +130,8 @@ FlowRouter.route('/faqs', {
 
 
 FlowRouter.notFound = {
-  action() {
+  async action() {
+    await import('../../ui/pages/not-found/not-found.js');
     BlazeLayout.render('App_body', {
       main: 'App_notFound',
       footer: 'footer'
