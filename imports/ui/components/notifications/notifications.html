@@ -1,0 +1,36 @@
+<template name="notifications">
+  {{#if isInRole 'admin'}}
+    <div class="card border-0 shadow my-1">
+      <div class="card-body">
+        <h4 class="card-title">Notifications ({{getCount 'pushSubsCount'}})</h4>
+        <form class="sendMsg">
+          <div class="input-group">
+            <textarea class="form-control" name="msg" placeholder="Write message here." aria-label="With textarea" required></textarea>
+          </div>
+          {{#if sending}}
+            <button class="btn btn-primary" type="button" disabled>
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+              Sending...
+            </button>
+          {{else}}
+            <button type="submit" class="btn btn-primary my-1"><i class="fab fa-telegram-plane" aria-hidden></i> Send Push Notification</button>
+          {{/if}}
+        </form>
+      </div>
+    </div>
+  {{else}}
+    <div class="card border-0 shadow my-1">
+      <div class="card-body">
+        <h4 class="card-title">Notifications</h4>
+      </div>
+    </div>
+  {{/if}}
+  {{#each updates}}
+    <div class="card border-0 shadow my-1">
+      <div class="card-body">
+        <p class="card-text"><b>Msg:</b> {{msg}}</p>
+        <small>{{calendar createdAt}}</small>
+      </div>
+    </div>
+  {{/each}}
+</template>

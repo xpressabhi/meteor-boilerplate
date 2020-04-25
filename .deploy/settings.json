@@ -1,5 +1,6 @@
 {
   "public": {
-
-  }
+    "VAPID_PublicKey":"BPVwk5cNsYuQt3NXpnXu2AA2JMbGEgfVyDczGspZejrk65EXmm3NXsAPhFWn-mpAKjdqZ4lRfHqBGJThs-JSenc"
+  },
+  "VAPID_PrivateKey":"yia5WTBsFdXykoYl08VLUbDcw9ArIvINTFa6T5Ae1nA"
 }

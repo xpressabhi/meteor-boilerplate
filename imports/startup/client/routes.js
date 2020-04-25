@@ -31,6 +31,20 @@ FlowRouter.route('/', {
     });
   },
 });
+
+FlowRouter.route('/notifications', {
+  triggersEnter: [AccountsTemplates.ensureSignedIn, scrollTop],
+  name: 'Notifications',
+  async action() {
+    await import('../../ui/components/notifications/notifications.js');
+    BlazeLayout.render('App_body', {
+      nav: 'nav',
+      main: 'notifications',
+      footer: 'footer'
+    });
+  },
+});
+
 FlowRouter.route('/users', {
   triggersEnter: [
     AccountsTemplates.ensureSignedIn,

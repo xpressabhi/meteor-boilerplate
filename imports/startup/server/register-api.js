@@ -9,6 +9,12 @@ import '../../api/faqs/server/publications.js';
 import '../../api/chats/methods.js';
 import '../../api/chats/server/publications.js';
 
+import '../../api/pushsubs/methods.js';
+import '../../api/pushsubs/server/publications.js';
+
+import '../../api/updates/methods.js';
+import '../../api/updates/server/publications.js';
+
 import '../../api/users/methods.js';
 import '../../api/users/server/publications.js';
 

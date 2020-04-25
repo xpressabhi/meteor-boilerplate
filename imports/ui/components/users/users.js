@@ -6,9 +6,10 @@ import './../../helpers/helpers.js';
 
 Template.users.onCreated(function() {
   this.searchQuery = new ReactiveVar('');
+  this.role = new ReactiveVar();
   this.limit = new ReactiveVar(5);
   this.autorun(() => {
-    this.subscribe("users.search", this.searchQuery.get(), this.limit.get());
+    this.subscribe("users.search", this.role.get(), this.searchQuery.get(), this.limit.get());
   });
 });
 
