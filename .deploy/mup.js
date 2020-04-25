@@ -1,19 +1,15 @@
 module.exports = {
   servers: {
     one: {
-      // TODO: set host address, username, and authentication method
-      host: '1.2.3.4',
+      host: 'x.x.x.x',
       username: 'root',
-      // pem: './path/to/pem'
-      // password: 'server-password'
-      // or neither for authenticate from ssh-agent
+      password: 'abcd'
     }
   },
 
   app: {
-    // TODO: change app name and path
     name: 'app',
-    path: '../',
+    path: '../../app',
 
     servers: {
       one: {},
@@ -21,43 +17,34 @@ module.exports = {
 
     buildOptions: {
       serverOnly: true,
+      debug: false
     },
 
     env: {
-      // TODO: Change to your app's url
-      // If you are using ssl, it needs to start with https://
-      ROOT_URL: 'http://app.com',
-      MONGO_URL: 'mongodb://mongodb/meteor',
-      MONGO_OPLOG_URL: 'mongodb://mongodb/local',
+      ROOT_URL: 'https://meteor.app',
+      MONGO_URL: 'mongodb://localhost/meteor'
     },
 
     docker: {
-      // change to 'abernix/meteord:base' if your app is using Meteor 1.4 - 1.5
-      image: 'abernix/meteord:node-8.4.0-base',
+      image: 'abernix/meteord:node-12-base', //required for meteor 1.6
+      stopAppDuringPrepareBundle: false,
     },
-
-    // Show progress bar while uploading bundle to server
-    // You might need to disable it on CI servers
+    deployCheckWaitTime: 120,
     enableUploadProgressBar: true
   },
-
-  mongo: {
-    version: '3.4.1',
-    servers: {
-      one: {}
+  proxy: {
+    domains: 'meteor.app,www.meteor.app',
+    ssl: {
+      forceSSL: true,
+      letsEncryptEmail: 'akmnitt+meteorapp@gmail.com'
     }
   },
 
-  // (Optional)
-  // Use the proxy to setup ssl or to route requests to the correct
-  // app when there are several apps
-
-  // proxy: {
-  //   domains: 'mywebsite.com,www.mywebsite.com',
-
-  //   ssl: {
-  //     // Enable Let's Encrypt
-  //     letsEncryptEmail: 'email@domain.com'
-  //   }
-  // }
+  mongo: {
+    port: 27017,
+    version: '4.2.5',
+    servers: {
+      one: {}
+    }
+  }
 };
