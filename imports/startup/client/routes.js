@@ -51,10 +51,10 @@ FlowRouter.route('/users', {
   ],
   name: 'Users',
   async action() {
-    await import('../../ui/pages/users/Users.js');
+    await import('../../ui/components/users/users.js');
     BlazeLayout.render('App_body', {
       nav: 'nav',
-      main: 'usersPage',
+      main: 'users',
       footer: 'footer'
     });
   },
@@ -71,7 +71,7 @@ FlowRouter.route('/dashboard', {
   ],
   name: 'Dashboard',
   async action() {
-    await import('../../ui/pages/dashboard/dashboard.js');
+    await import('../../ui/components/dashboard/dashboard.js');
     BlazeLayout.render('App_body', {
       nav: 'nav',
       main: 'dashboard',
@@ -84,10 +84,10 @@ FlowRouter.route('/profile', {
   triggersEnter: [AccountsTemplates.ensureSignedIn],
   name: 'Profile',
   async action() {
-    await import('../../ui/pages/profile/profile.js');
+    await import('../../ui/components/profile/profile.js');
     BlazeLayout.render('App_body', {
       nav: 'nav',
-      main: 'Profile',
+      main: 'profile',
       footer: 'footer'
     });
   },
@@ -96,10 +96,10 @@ FlowRouter.route('/support', {
   triggersEnter: [AccountsTemplates.ensureSignedIn],
   name: 'Support',
   async action() {
-    await import('../../ui/pages/support/support.js');
+    await import('../../ui/components/support/support.js');
     BlazeLayout.render('App_body', {
       nav: 'nav',
-      main: 'Support',
+      main: 'support',
       footer: 'footer'
     });
   },
@@ -108,10 +108,10 @@ FlowRouter.route('/support/:id', {
   triggersEnter: [AccountsTemplates.ensureSignedIn],
   name: 'Support',
   async action() {
-    await import('../../ui/pages/support/support.js');
+    await import('../../ui/components/support/support.js');
     BlazeLayout.render('App_body', {
       nav: 'nav',
-      main: 'Support',
+      main: 'support',
       footer: 'footer'
     });
   },
@@ -119,10 +119,10 @@ FlowRouter.route('/support/:id', {
 FlowRouter.route('/faqs', {
   name: 'FAQs',
   async action() {
-    await import('../../ui/pages/faqs/Faqs.js');
+    await import('../../ui/components/faqs/faqs.js');
     BlazeLayout.render('App_body', {
       nav: 'nav',
-      main: 'Faqs',
+      main: 'faqs',
       footer: 'footer'
     });
   },

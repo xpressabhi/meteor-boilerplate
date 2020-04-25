@@ -9,7 +9,6 @@ Template.nav.onRendered(function() {
   const path = FlowRouter.current().path.split('/')[1];
   $('.active').removeClass('active');
   $(`a[href$="/${path}"]`).addClass('active');
-  $('.page-loading').remove();
 });
 
 

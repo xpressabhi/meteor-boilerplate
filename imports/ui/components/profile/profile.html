@@ -1,0 +1,11 @@
+<template name="profile">
+  <div class="card border-0 shadow my-1">
+    <div class="card-body">
+      <h4 class="card-title"><i class="fas fa-user" aria-hidden></i>{{currentUser.profile.name}}</h4>
+      {{#each currentUser.emails}}
+        <p class="lead">{{address}}</p>
+      {{/each}}
+      <p>{{> changePwd}}</p>
+    </div>
+  </div>
+</template>

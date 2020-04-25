@@ -1,0 +1,53 @@
+<template name="changePwd">
+  <button type="button" class="btn btn-primary btn-lg btn-block my-1" data-toggle="modal" data-target="#changePwd">
+    <i class="fas fa-key"></i> Change Password
+  </button>
+  <div class="modal fade" id="changePwd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h4 class="modal-title" id="myModalLabel">Change password</h4>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span area-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          {{#if pwdChangeMsg}}
+          <div class="alert alert-warning" role="alert">
+            <strong>Warning!</strong> {{pwdChangeMsg}}.
+          </div>
+          {{/if}}
+          {{#if successPwdMsg}}
+            <div class="alert alert-success" role="alert">
+              <strong>Well done!</strong> {{successPwdMsg}}.
+            </div>
+          {{/if}}
+          <form class="change-pwd-form">
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Old</span>
+              </div>
+              <input type="password" class="form-control" id="oldPwd" placeholder="Old Password" pattern=".{6,100}" required="required" title="6 to 100 characters">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">New</span>
+              </div>
+              <input type="password" class="form-control" id="newPwd" placeholder="New Password" pattern=".{6,100}" required="required" title="6 to 100 characters">
+            </div>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">Retype</span>
+              </div>
+              <input type="password" class="form-control" id="retypePwd" placeholder="Retype New Password" pattern=".{6,100}" required="required" title="6 to 100 characters">
+            </div>
+            <button type="submit" class="btn btn-primary float-right">Change Password</button>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
