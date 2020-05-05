@@ -21,12 +21,14 @@ const options = {
   limit: 50
 };
 Meteor.publish("user.byids", function(ids) {
-  check(ids, [String]);
-  return Meteor.users.find({
-    _id: {
-      $in: ids
-    }
-  }, options);
+  if (Roles.userIsInRole(this.userId, 'admin')) {
+    check(ids, [String]);
+    return Meteor.users.find({
+      _id: {
+        $in: ids
+      }
+    }, options);
+  }
 });
 
 Meteor.publish("user.one", function(id) {
@@ -37,7 +39,9 @@ Meteor.publish("user.one", function(id) {
 });
 
 Meteor.publish('users.all', function() {
-  return Meteor.users.find({}, options);
+  if (Roles.userIsInRole(this.userId, 'admin')) {
+    return Meteor.users.find({}, options);
+  }
 });
 
 Meteor.publish('users.search', function(role, text, limit) {
@@ -74,5 +78,7 @@ Meteor.publish('users.search', function(role, text, limit) {
 });
 
 Meteor.publish('user.counts', function() {
-  Counts.publish(this, 'allUsers', Meteor.users.find({}));
+  if (Roles.userIsInRole(this.userId, 'admin')) {
+    Counts.publish(this, 'allUsers', Meteor.users.find({}));
+  }
 });
