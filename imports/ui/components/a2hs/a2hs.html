@@ -1,0 +1,28 @@
+<template name="a2hs">
+  {{#unless isStandalone}}
+    {{#if iPhone}}
+      <div class="card border-0 shadow my-2 text-center">
+        <div class="card-body">
+          <h4 class="card-title">Install Web App</h4>
+          {{#if isSafari}}
+            <p class="card-text">Tap <img src="https://img.icons8.com/material/24/000000/share-rounded.png"> and then <b>Add to Home Screen</b></p>
+          {{else}}
+            <p class="card-text">Open website in Safari to install web app</p>
+            <button type="button" class="btn btn-primary copy-link" data-clipboard-text="https://uberpro.in"><i class="fas fa-clipboard" aria-hidden></i> Copy Link</button>
+          {{/if}}
+        </div>
+      </div>
+    {{else if isAndroid}}
+      <div class="card border-0 shadow my-2">
+        <div class="card-body">
+          <h4 class="card-title text-center">Install Web App</h4>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">1. Open your browser’s settings.</li>
+          <li class="list-group-item">2. Scroll down and tap <b>Add to Home screen</b></li>
+          <li class="list-group-item">3. Confirm by tapping Add.</li>
+        </ul>
+      </div>
+    {{/if}}
+  {{/unless}}
+</template>

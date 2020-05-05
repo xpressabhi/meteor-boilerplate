@@ -1,5 +1,6 @@
 <template name="App_home">
   <div class="container">
+    {{> a2hs}}
     {{#if currentUser}}
       {{#if isInRole 'admin'}}
         <p class="lead">You are an admin.</p>
@@ -7,10 +8,10 @@
       {{> hello}}
       {{> info}}
     {{else}}
-    <div class="jumbotron">
-      <h1>MeteorJS Start</h1>
-      <p>MeteorJS is the most popular full stack web development framework to build web, mobile and desktop apps.</p>
-    </div>
+      <div class="jumbotron">
+        <h1>MeteorJS Start</h1>
+        <p>MeteorJS is the most popular full stack web development framework to build web, mobile and desktop apps.</p>
+      </div>
     {{/if}}
   </div>
 
