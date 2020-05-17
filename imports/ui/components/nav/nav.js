@@ -1,25 +1,37 @@
 import './nav.html';
 
-Template.nav.onCreated(function navOnCreated() {
-  // counter starts at 0
+import {
+  animateCSS,
+  animateCSSNode
+} from '/imports/ui/helpers/methods.js';
 
+Template.mainNav.onCreated(function navOnCreated() {
+  // counter starts at 0
 });
 
-Template.nav.onRendered(function() {
+Template.mainNav.onRendered(function() {
   const path = FlowRouter.current().path.split('/')[1];
   $('.active').removeClass('active');
   $(`a[href$="/${path}"]`).addClass('active');
 });
 
 
-Template.nav.events({
+Template.mainNav.events({
   'click .logout': () => {
     AccountsTemplates.logout();
     FlowRouter.go('/');
   },
-  'click .nav-link'(event, templateInstance) {
+  'click .nav-link'(e, t) {
     $('.active').removeClass('active');
-    $(event.currentTarget).addClass('active');
+    $(t.currentTarget).addClass('active');
+    animateCSSNode(e.currentTarget, 'jello');
   }
 
+});
+Template.userNav.events({
+  'click .nav-link'(e, t) {
+    $('.active').removeClass('active');
+    $(t.currentTarget).addClass('active');
+    animateCSSNode(e.currentTarget, 'jello');
+  }
 });

@@ -18,4 +18,19 @@ export const username = (id) => {
   return user && user.profile && user.profile.name || 'NoName';
 }
 
+const animate = (node, animationName, callback) => {
+  node.classList.add('animated', animationName)
+
+  function handleAnimationEnd() {
+    node.classList.remove('animated', animationName)
+    node.removeEventListener('animationend', handleAnimationEnd)
+
+    if (typeof callback === 'function') callback()
+  }
+
+  node.addEventListener('animationend', handleAnimationEnd)
+}
+export const animateCSSNode = (node, animationName, callback) => animate(node, animationName, callback);
+export const animateCSS = (element, animationName, callback) => animate(document.querySelector(element), animationName, callback)
+
 export const pad = n => n < 10 ? `0${n}` : n;
