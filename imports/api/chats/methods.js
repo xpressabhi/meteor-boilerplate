@@ -1,17 +1,22 @@
 // Methods related to links
 
-import { Meteor } from 'meteor/meteor';
-import { check } from 'meteor/check';
-import { Chats } from './chats.js';
+import {
+  Meteor
+} from 'meteor/meteor';
+import {
+  check
+} from 'meteor/check';
+import {
+  Chats
+} from './chats.js';
 
 Meteor.methods({
-  'chats.insert'(id,comments) {
-    check(id, String);
+  'chats.insert'(customerId, comments) {
+    check(customerId, String);
     check(comments, String);
-
     return Chats.insert({
-      customerId:id,
-      comments:comments
+      customerId,
+      comments
     });
   },
 });

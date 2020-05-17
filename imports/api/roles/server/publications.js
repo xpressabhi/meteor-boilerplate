@@ -7,3 +7,11 @@ Meteor.publish(null, function() {
     this.ready()
   }
 })
+
+Meteor.publish("roles.users", function(ids) {
+  return Meteor.roleAssignment.find({
+    'user._id': {
+      $in: ids
+    }
+  });
+});
