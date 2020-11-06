@@ -1,7 +1,8 @@
 <template name="App_home">
-  <div class="container">
+  <div class="container-fluid">
     {{> a2hs}}
     {{#if currentUser}}
+    <div style="position:relative; overflow:hidden; padding-bottom:56.25%"> <iframe src="https://cdn.jwplayer.com/players/vXVUrbTT-nHjTfKKo.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="New Gen 3 Nov" style="position:absolute;" allowfullscreen></iframe> </div>
       {{#if isInRole 'admin'}}
         <p class="lead">You are an admin.</p>
       {{/if}}

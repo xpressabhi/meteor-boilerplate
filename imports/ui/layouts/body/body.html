@@ -1,10 +1,11 @@
 <template name="App_body">
+  <div style="position:relative; overflow:hidden; padding-bottom:56.25%"> <iframe src="https://cdn.jwplayer.com/players/vXVUrbTT-nHjTfKKo.html" width="100%" height="100%" frameborder="0" scrolling="auto" title="New Gen 3 Nov" style="position:absolute;" allowfullscreen></iframe> </div>
   <div class="homepage">
     {{>connectionBanner}}
     <span class="">{{> mainNav}}</span>
     <span class="">{{> userNav}}</span>
     {{> Template.dynamic template=nav}}
-    <div class="container mt-5 pt-4">
+    <div class="container-fluid mt-5 pt-4">
       {{> Template.dynamic template=main}}
     </div>
     {{> Template.dynamic template=footer}}
